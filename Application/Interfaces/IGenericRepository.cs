@@ -10,7 +10,7 @@ namespace Application.Interfaces
     public interface IGenericRepository<T> where T : class
     {
         Task<OperationResult<IEnumerable<T>>> GetAllAsync();
-        Task<OperationResult<T>> GetByIdAsync(string id);
+        Task<OperationResult<T>> GetByIdAsync(Guid id);
         Task<OperationResult<T>> AddAsync(T entity);
         Task<OperationResult<T>> UpdateAsync(T entity);
         Task<OperationResult<bool>> DeleteAsync(string id);

@@ -1,7 +1,9 @@
 ﻿using Application.Common.Behaviors;
 using Application.Interfaces;
+using Application.Services;
 using FluentValidation;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -22,6 +24,9 @@ namespace Application
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+
+            services.AddScoped<UserService>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             return services;
         }
