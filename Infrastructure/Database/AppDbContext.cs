@@ -1,4 +1,5 @@
-﻿using Domain.Models.User;
+﻿using Domain.Models.Medicine;
+using Domain.Models.User;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,5 +20,7 @@ namespace Infrastructure.Database
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Medicine> Medicines { get; set; }
+        public DbSet<MedicationReminder> MedicationReminders { get; set; }
     }
 }

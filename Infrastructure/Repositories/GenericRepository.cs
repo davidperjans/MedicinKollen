@@ -47,7 +47,7 @@ namespace Infrastructure.Repositories
             return OperationResult<IEnumerable<T>>.Success(list);
         }
 
-        public async Task<OperationResult<T>> GetByIdAsync(string id)
+        public async Task<OperationResult<T>> GetByIdAsync(Guid id)
         {
             var entity = await _dbSet.FindAsync(id);
             if (entity == null)

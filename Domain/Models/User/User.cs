@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Models.Medicine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,6 @@ namespace Domain.Models.User
         public string Password { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateOnly? DateOfBirth { get; set; }
+        public List<MedicationReminder> MedicationReminders { get; set; }
     }
 }
